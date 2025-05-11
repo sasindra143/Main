@@ -1,0 +1,1880 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertex Solutions - portfolios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff6b00;
+            --dark: #1a1a1a;
+            --light: #ffffff;
+            --gray: #888888;
+            --transition: all 0.3s ease;
+        }
+
+        [data-theme="light"] {
+            --dark: #ffffff;
+            --light: #1a1a1a;
+            --gray: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--dark);
+            color: var(--light);
+            transition: var(--transition);
+            overflow-x: hidden;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 100px 5%;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 5%;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .theme-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .theme-toggle i {
+            color: var(--light);
+            font-size: 20px;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 30px;
+            height: 2px;
+            background: var(--light);
+            transition: var(--transition);
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo">Vertex-Solutions</a>
+            <nav class="nav-menu">
+                <a href="#home" class="nav-link">HOME</a>
+                <a href="#about" class="nav-link">ABOUT</a>
+                <a href="#service" class="nav-link">SERVICE</a>
+                <a href="#design" class="nav-link">DESIGN</a>
+                <a href="#template" class="nav-link">TEMPLATES</a>
+                <a href="#contact" class="nav-link">CONTACT</a>
+            </nav>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+               
+            </div>
+        </div>
+    </header>
+
+  
+
+
+
+
+<section class="hero" id="home">
+    <div class="hero-particles" id="particles-js"></div>
+    <div class="hero-content">
+        <h1 class="hero-title">Welcome to <span class="gradient-text">VertexSolutions</span></h1>
+        <h2 class="hero-subtitle">Shape Your Future with</h2>
+        <h3 class="hero-subheading">Your Academic Excellence</h3>
+        <div class="hero-description">
+            <p class="typing-text"></p>
+        </div>
+        <div class="cta-container">
+            <button class="cta-button primary">Explore Templates</button>
+            <button class="cta-button secondary">Get In Touch</button>
+        </div>
+    </div>
+</section>
+
+<style>
+.hero {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(black);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px;
+}
+
+.hero-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-title {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s forwards;
+}
+
+.gradient-text {
+    background: linear-gradient(45deg, #64ffda, #00bcd4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s forwards 0.2s;
+}
+
+.hero-subheading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s forwards 0.4s;
+}
+
+.hero-description {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    min-height: 60px;
+}
+
+.typing-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #8892b0;
+}
+
+.cta-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s forwards 0.6s;
+}
+
+.cta-button {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.cta-button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.cta-button.primary {
+    background: #64ffda;
+    color: #0a192f;
+    border: none;
+}
+
+.cta-button.secondary {
+    background: transparent;
+    border: 2px solid #64ffda;
+    color: #64ffda;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.8rem;
+    }
+
+    .hero-subheading {
+        font-size: 1.5rem;
+    }
+
+    .cta-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 2rem;
+    }
+
+    .hero-description {
+        padding: 0 1rem;
+    }
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Particles.js Configuration
+    particlesJS('particles-js', {
+        particles: {
+            number: { value: 80 },
+            color: { value: '#64ffda' },
+            shape: { type: 'circle' },
+            opacity: {
+                value: 0.5,
+                random: true
+            },
+            size: {
+                value: 3,
+                random: true
+            },
+            move: {
+                enable: true,
+                speed: 2,
+                direction: 'none',
+                random: true,
+                out_mode: 'out'
+            }
+        },
+        interactivity: {
+            events: {
+                onhover: {
+                    enable: true,
+                    mode: 'repulse'
+                }
+            }
+        }
+    });
+
+    // Typing Animation
+    const text = "Providing top-notch portfolio services, web design, and IT solutions to help students and businesses succeed.";
+    const typingText = document.querySelector('.typing-text');
+    let i = 0;
+    
+    function typeWriter() {
+        if (i < text.length) {
+            typingText.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 50);
+        }
+    }
+
+    setTimeout(typeWriter, 1000);
+
+    // Smooth scroll for buttons
+    document.querySelectorAll('.cta-button').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const target = button.classList.contains('primary') ? '#services' : '#contact';
+            document.querySelector(target)?.scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        });
+    });
+});
+</script>
+
+
+    <!--About-Section-->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <h2 class="section-title">About Us – <span>Building Portfolios That Speak for You</span></h2>
+            
+            <div class="about-text">
+                <p>At PraRoz, we believe your first impression is your portfolio. We're a team of passionate designers and developers dedicated to helping students and professionals present themselves online with confidence.</p>
+                <p>Our mission is simple: To empower every individual with a high-quality personal brand through engaging and professional digital portfolios. Whether you're applying for a job, internship, or showcasing your work to the world — we've got your back.</p>
+            </div>
+    
+            <div class="stats-container">
+                <div class="stat-box">
+                    <i class="fas fa-users"></i>
+                    <h3>500+</h3>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>100+</h3>
+                    <p>Projects Done</p>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-trophy"></i>
+                    <h3>15+</h3>
+                    <p>Awards Won</p>
+                </div>
+            </div>
+    
+            <div class="features-grid">
+                <div class="feature-box">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Fast Delivery</h3>
+                    <p>Quick turnaround time for your portfolio needs</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fas fa-sync"></i>
+                    <h3>Free Revisions</h3>
+                    <p>Unlimited revisions until you're satisfied</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fas fa-headset"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock assistance for your queries</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Responsive Design</h3>
+                    <p>Perfect display on all devices</p>
+                </div>
+            </div>
+    
+            <div class="team-section">
+                <h2 class="section-title">Meet Our Team</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-badge">Team Member</div>
+                        <h3>Madduri sasindra</h3>
+                        <p>Lead Designer</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-badge">Team Member</div>
+                        <h3>Madduri Sasindra</h3>
+                        <p>Senior Developer</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-badge">Team Member</div>
+                        <h3>Shaik Shareef</h3>
+                        <p>UI/UX Expert</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+    .about-section {
+        padding: 100px 5%;
+        background: var(--dark);
+    }
+    
+    .about-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 40px;
+        color: var(--light);
+    }
+    
+    .section-title span {
+        color: var(--primary);
+    }
+    
+    .about-text {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 60px;
+        line-height: 1.8;
+        color: var(--gray);
+    }
+    
+    .stats-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-bottom: 80px;
+    }
+    
+    .stat-box {
+        text-align: center;
+        padding: 40px 20px;
+        background: rgba(255,255,255,0.05);
+        border-radius: 15px;
+        transition: transform 0.3s ease;
+    }
+    
+    .stat-box:hover {
+        transform: translateY(-10px);
+    }
+    
+    .stat-box i {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 20px;
+    }
+    
+    .stat-box h3 {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 10px;
+    }
+    
+    .stat-box p {
+        color: var(--gray);
+    }
+    
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        margin-bottom: 100px;
+    }
+    
+    .feature-box {
+        text-align: center;
+        padding: 30px 20px;
+        background: rgba(255,255,255,0.05);
+        border-radius: 15px;
+        transition: transform 0.3s ease;
+    }
+    
+    .feature-box:hover {
+        transform: translateY(-10px);
+    }
+    
+    .feature-box i {
+        font-size: 2rem;
+        color: var(--primary);
+        margin-bottom: 20px;
+    }
+    
+    .feature-box h3 {
+        color: var(--light);
+        margin-bottom: 15px;
+    }
+    
+    .feature-box p {
+        color: var(--gray);
+        font-size: 0.9rem;
+    }
+    
+    .team-section {
+        text-align: center;
+    }
+    
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+    
+    .team-member {
+        position: relative;
+        padding: 40px 20px;
+        background: rgba(255,255,255,0.05);
+        border-radius: 15px;
+        transition: transform 0.3s ease;
+    }
+    
+    .team-member:hover {
+        transform: translateY(-10px);
+    }
+    
+    .member-badge {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--primary);
+        color: var(--light);
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+    }
+    
+    .team-member h3 {
+        margin-top: 20px;
+        color: var(--light);
+        margin-bottom: 5px;
+    }
+    
+    .team-member p {
+        color: var(--gray);
+        margin-bottom: 20px;
+    }
+    
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .social-links a {
+        color: var(--gray);
+        transition: 0.3s ease;
+    }
+    
+    .social-links a:hover {
+        color: var(--primary);
+    }
+    
+    @media (max-width: 1024px) {
+        .features-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .stats-container,
+        .team-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .section-title {
+            font-size: 2rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .stats-container,
+        .features-grid,
+        .team-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+        }
+    }
+    </style>
+<!--design Section-->
+
+<section id="design" class="design-section">
+    <div class="design-container">
+        <h2 class="section-title">Our Design <span>Services</span></h2>
+        
+        <div class="design-text">
+            <p>We create stunning, professional designs that help you stand out in the digital world. Our expertise spans across various design domains, ensuring your online presence is both beautiful and functional.</p>
+        </div>
+
+        <div class="design-grid">
+            <div class="design-card" data-aos="fade-up">
+                <div class="card-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3>Web Design</h3>
+                <p>Custom websites with modern UI/UX principles, ensuring an engaging user experience.</p>
+                <a href="#" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="design-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Responsive Design</h3>
+                <p>Mobile-first approach ensuring your website looks perfect on all devices.</p>
+                <a href="#" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="design-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <h3>E-Commerce</h3>
+                <p>Professional online stores with seamless shopping experience.</p>
+                <a href="#" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="design-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3>UI/UX Design</h3>
+                <p>User-centered design approach focusing on usability and aesthetics.</p>
+                <a href="#" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <div class="portfolio-showcase">
+            <h3 class="showcase-title">Recent Projects</h3>
+            <div class="showcase-grid">
+                <div class="showcase-item" data-aos="zoom-in">
+                    <img src="https://res.cloudinary.com/dvknx0hpm/image/upload/v1746771687/Screenshot_2025-05-09_115031_qfyrhc.png" alt="Project 1">
+                    <div class="overlay">
+                        <h4>Portfolio Website</h4>
+                        <p>Web Design</p>
+                    </div>
+                </div>
+                <div class="showcase-item" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://res.cloudinary.com/dvknx0hpm/image/upload/v1746776398/Screenshot_2025-05-09_130944_dquy84.png" alt="Project 2">
+                    <div class="overlay">
+                        <h4>E-Commerce Platform</h4>
+                        <p>Web Development</p>
+                    </div>
+                </div>
+                <div class="showcase-item" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://res.cloudinary.com/dvknx0hpm/image/upload/v1746789158/Screenshot_2025-05-09_164218_vy6m2x.png" alt="Project 3">
+                    <div class="overlay">
+                        <h4>Foodie Website</h4>
+                        <p>UI/UX Design</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.design-section {
+    padding: 100px 5%;
+    background: var(--dark);
+}
+
+.design-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.design-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+    color: var(--gray);
+    line-height: 1.8;
+}
+
+.design-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.design-card {
+    background: rgba(255,255,255,0.05);
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.design-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.08);
+}
+
+.card-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+}
+
+.card-icon i {
+    font-size: 30px;
+    color: var(--light);
+}
+
+.design-card h3 {
+    color: var(--light);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.design-card p {
+    color: var(--gray);
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.card-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s ease;
+}
+
+.card-link:hover {
+    gap: 12px;
+}
+
+.portfolio-showcase {
+    margin-top: 100px;
+}
+
+.showcase-title {
+    text-align: center;
+    color: var(--light);
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.showcase-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+}
+
+.showcase-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.showcase-item:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    transition: 0.3s ease;
+}
+
+.showcase-item:hover .overlay {
+    bottom: 0;
+}
+
+.overlay h4 {
+    color: var(--light);
+    margin-bottom: 5px;
+}
+
+.overlay p {
+    color: var(--primary);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 1024px) {
+    .design-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .showcase-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .design-grid,
+    .showcase-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+
+
+
+<!--Templates Section-->
+
+<section id="template" class="templates-section">
+    <div class="templates-container">
+        <h2 class="section-title">Our <span>Templates</span></h2>
+        
+        <div class="categories-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="portfolio">Portfolio</button>
+            <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+            <button class="filter-btn" data-filter="blog">Blog</button>
+            <button class="filter-btn" data-filter="business">Business</button>
+            <button class="filter-btn" data-filter="social">Social Media</button>
+        </div>
+
+        <div class="templates-grid">
+
+
+            <!--Portfolio Template-->
+
+             <div class="template-card" data-category="portfolio">
+                 <video width="100%" autoplay muted loop playsinline>
+                <source src="https://res.cloudinary.com/dvknx0hpm/video/upload/v1746778931/Screen_Recording_2025-05-09_135147_r3vfop.mp4" type="video/mp4">
+                            
+                </video>
+                <div class="template-content">
+                    <h3>Creative Portfolio</h3>
+                    <p>Showcase your work with this elegant portfolio template</p>
+                    <div class="template-buttons">
+                        <a href="https://vertex-solutions1922.github.io/portfolio1/"><button class="demo-btn">Live Demo</button></a>
+                        <button class="price-btn" data-price="249">$7.02</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Business Template -->
+            <div class="template-card" data-category="business">
+                
+                 <video width="100%" autoplay muted loop playsinline>
+                <source src="https://res.cloudinary.com/dvknx0hpm/video/upload/v1746788594/Screen_Recording_2025-05-09_003658_e21ayf.mp4" type="video/mp4">
+                            
+                </video>
+                <div class="template-content">
+                    <h3>Corporate Pro</h3>
+                    <p>Professional business website template with modern design</p>
+                    <div class="template-buttons">
+                        <a href="https://vertex-solutions1922.github.io/Traveler/"><button class="demo-btn">Live Demo</button></a>
+                        <button class="price-btn" data-price="299">$4</button>
+                    </div>
+                </div>
+            </div>
+
+
+            
+             <div class="template-card" data-category="portfolio">
+               
+                 <video width="100%" autoplay muted loop playsinline>
+                <source src="https://res.cloudinary.com/dvknx0hpm/video/upload/v1746901368/Screen_Recording_2025-05-10_235221_au6oxq.mp4" type="video/mp4">
+                            
+                </video>
+                <div class="template-content">
+                    <h3>Creative Portfolio</h3>
+                    <p>Showcase your work with this elegant portfolio template</p>
+                    <div class="template-buttons">
+                        <a href="https://vertex-solutions1922.github.io/portfolio4/"><button class="demo-btn">Live Demo</button></a>
+                        <button class="price-btn" data-price="249">$7.02</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="template-card" data-category="business">
+                
+                 <video width="100%" autoplay muted loop playsinline>
+                <source src="https://res.cloudinary.com/dvknx0hpm/video/upload/v1746944132/Screen_Recording_2025-05-11_114343_jdqzt0.mp4" type="video/mp4">
+                            
+                </video>
+                <div class="template-content">
+                    <h3>Corporate Pro</h3>
+                    <p>Professional business website template with modern design</p>
+                    <div class="template-buttons">
+                        <a href="https://vertex-solutions1922.github.io/Traveler/"><button class="demo-btn">Live Demo</button></a>
+                        <button class="price-btn" data-price="299">$4</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+                <div class="template-card" data-category="portfolio">
+                 <video width="100%" autoplay muted loop playsinline>
+                <source src="https://vertex-solutions1922.github.io/footwear/" type="video/mp4">
+                            
+                </video>
+                <div class="template-content">
+                    <h3>Creative Portfolio</h3>
+                    <p>Showcase your work with this elegant portfolio template</p>
+                    <div class="template-buttons">
+                        <a href="https://vertex-solutions1922.github.io/porfolio6/"><button class="demo-btn">Live Demo</button></a>
+                        <button class="price-btn" data-price="249">$7.02</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- E-commerce Template -->
+            <div class="template-card" data-category="ecommerce">
+              
+                 <video width="100%" autoplay muted loop playsinline>
+                <source src="https://res.cloudinary.com/dvknx0hpm/video/upload/v1746905719/Screen_Recording_2025-05-11_010456_jr0khp.mp4" type="video/mp4">
+                            
+                </video>
+                <div class="template-content">
+                    <h3>Shop Master</h3>
+                    <p>Feature-rich e-commerce template with shopping cart</p>
+                    <div class="template-buttons">
+                        <a href=" https://sasindra143.github.io/Farmer-Customer-Interface/"><button class="demo-btn">Live Demo</button></a>
+                        <button class="price-btn" data-price="399">$3</button>
+                    </div>
+                </div>
+            </div>
+
+
+             <div class="template-card" data-category="ecommerce">
+              
+                 <video width="100%" autoplay muted loop playsinline>
+                <source src="https://res.cloudinary.com/dvknx0hpm/video/upload/v1746905719/Screen_Recording_2025-05-11_010456_jr0khp.mp4" type="video/mp4">
+                            
+                </video>
+                <div class="template-content">
+                    <h3>Shop Master</h3>
+                    <p>Feature-rich e-commerce template with shopping cart</p>
+                    <div class="template-buttons">
+                        <a href=" https://sasindra143.github.io/Farmer-Customer-Interface/"><button class="demo-btn">Live Demo</button></a>
+                        <button class="price-btn" data-price="399">$3</button>
+                    </div>
+                </div>
+            </div>
+
+            
+
+
+
+
+            
+                <div class="template-card" data-category="portfolio">
+                 <video width="100%" autoplay muted loop playsinline>
+                <source src="https://res.cloudinary.com/dvknx0hpm/video/upload/v1746909498/Screen_Recording_2025-05-11_020758_lslmq1.mp4" type="video/mp4">
+                            
+                </video>
+                <div class="template-content">
+                    <h3>Creative Portfolio</h3>
+                    <p>Showcase your work with this elegant portfolio template</p>
+                    <div class="template-buttons">
+                        <a href="https://vertex-solutions1922.github.io/portfolio7/"><button class="demo-btn">Live Demo</button></a>
+                        <button class="price-btn" data-price="249">$7.02</button>
+                    </div>
+                </div>
+            </div>
+
+             <div class="template-card" data-category="portfolio">
+                 <video width="100%" autoplay muted loop playsinline>
+                <source src="https://res.cloudinary.com/dvknx0hpm/video/upload/v1746902801/Screen_Recording_2025-05-11_001619_yu6vks.mp4" type="video/mp4">
+                            
+                </video>
+                <div class="template-content">
+                    <h3>Creative Portfolio</h3>
+                    <p>Showcase your work with this elegant portfolio template</p>
+                    <div class="template-buttons">
+                        <a href="https://vertex-solutions1922.github.io/portfolio5/"><button class="demo-btn">Live Demo</button></a>
+                        <button class="price-btn" data-price="249">$7.02</button>
+                    </div>
+                </div>
+            </div>
+            
+
+
+
+
+
+
+              <div class="template-card" data-category="portfolio">
+                 <video width="100%" autoplay muted loop playsinline>
+                <source src="https://res.cloudinary.com/dvknx0hpm/video/upload/v1746939615/Screen_Recording_2025-05-11_102856_wofyej.mp4" type="video/mp4">
+                            
+                </video>
+                <div class="template-content">
+                    <h3>Creative Portfolio</h3>
+                    <p>Showcase your work with this elegant portfolio template</p>
+                    <div class="template-buttons">
+                        <a href="https://sasindra143.github.io/poert/"><button class="demo-btn">Live Demo</button></a>
+                        <button class="price-btn" data-price="249">$7.02</button>
+                    </div>
+                </div>
+            </div>
+
+             <div class="template-card" data-category="business">
+                
+                 <video width="100%" autoplay muted loop playsinline>
+                <source src="https://res.cloudinary.com/dvknx0hpm/video/upload/v1746901056/Screen_Recording_2025-05-10_234653_avyrry.mp4" type="video/mp4">
+                            
+                </video>
+                <div class="template-content">
+                    <h3>Corporate Pro</h3>
+                    <p>Professional business website template with modern design</p>
+                    <div class="template-buttons">
+                        <a href="https://sasindra143.github.io/Usin-AI-Hospital-Landing-Page/"><button class="demo-btn">Live Demo</button></a>
+                        <button class="price-btn" data-price="299">$4</button>
+                    </div>
+                </div>
+            </div>
+
+
+              <div class="template-card" data-category="portfolio">
+               
+                 <video width="100%" autoplay muted loop playsinline>
+                <source src="https://res.cloudinary.com/dvknx0hpm/video/upload/v1746899491/Screen_Recording_2025-05-10_232025_u1afrg.mp4" type="video/mp4">
+                            
+                </video>
+                <div class="template-content">
+                    <h3>Creative Portfolio</h3>
+                    <p>Showcase your work with this elegant portfolio template</p>
+                    <div class="template-buttons">
+                        <a href="https://vertex-solutions1922.github.io/portfolio3/"><button class="demo-btn">Live Demo</button></a>
+                        <button class="price-btn" data-price="249">$5</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="template-card" data-category="ecommerce">
+              
+                 <video width="100%" autoplay muted loop playsinline>
+                <source src="https://res.cloudinary.com/dvknx0hpm/video/upload/v1746789933/Screen_Recording_2025-05-09_165501_a9iosu.mp4" type="video/mp4">
+                            
+                </video>
+                <div class="template-content">
+                    <h3>Shop Master</h3>
+                    <p>Feature-rich e-commerce template with shopping cart</p>
+                    <div class="template-buttons">
+                        <a href=" https://vertex-solutions1922.github.io/burger/"><button class="demo-btn">Live Demo</button></a>
+                        <button class="price-btn" data-price="399">$2</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Blog Template -->
+            <div class="template-card" data-category="blog">
+                <!-- <img src="blog-template.jpg" alt="Blog Template"> -->
+                <video width="100%" autoplay muted loop playsinline>
+                <source src="https://res.cloudinary.com/dvknx0hpm/video/upload/v1746788350/Screen_Recording_2025-05-09_162813_e4mkck.mp4" type="video/mp4">
+                            
+                </video>
+
+                <div class="template-content">
+                    <h3>Blog Elite</h3>
+                    <p>Clean and minimal blog template for content creators</p>
+                    <div class="template-buttons">
+                       <a href="https://vertex-solutions1922.github.io/blog3.html/"> <button class="demo-btn">Live Demo</button></a>
+                        <button class="price-btn" data-price="199">$6.5</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio Template -->
+            
+
+            <div class="template-card" data-category="portfolio">
+               
+                 <video width="100%" autoplay muted loop playsinline>
+                <source src="https://res.cloudinary.com/dvknx0hpm/video/upload/v1746780896/Screen_Recording_2025-05-09_142417_yl66be.mp4" type="video/mp4">
+                            
+                </video>
+                <div class="template-content">
+                    <h3>Creative Portfolio</h3>
+                    <p>Showcase your work with this elegant portfolio template</p>
+                    <div class="template-buttons">
+                        <a href="https://vertex-solutions1922.github.io/portfolio2//"><button class="demo-btn">Live Demo</button></a>
+                        <button class="price-btn" data-price="249">$8</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+             <div class="template-card" data-category="portfolio">
+               
+                 <video width="100%" autoplay muted loop playsinline>
+                <source src="https://res.cloudinary.com/dvknx0hpm/video/upload/v1746781439/Screen_Recording_2025-05-09_143335_u8pse8.mp4" type="video/mp4">
+                            
+                </video>
+                <div class="template-content">
+                    <h3>Creative Portfolio</h3>
+                    <p>Showcase your work with this elegant portfolio template</p>
+                    <div class="template-buttons">
+                        <a href="https://vertex-solutions1922.github.io/porfolio3/"><button class="demo-btn">Live Demo</button></a>
+                        <button class="price-btn" data-price="249">$249</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <!-- Social Media Template -->
+           
+        </div>
+    </div>
+
+    <!-- QR Code Modal -->
+    <div id="qrModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Scan to Pay</h3>
+            <div id="qrcode"></div>
+            <p class="price-text">Amount: $<span id="qrPrice">0</span></p>
+        </div>
+    </div>
+</section>
+
+<style>
+.templates-section {
+    padding: 100px 5%;
+    background: var(--dark);
+}
+
+.templates-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.categories-filter {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border: 1px solid var(--primary);
+    background: transparent;
+    color: var(--light);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--primary);
+}
+
+.templates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.template-card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.template-card:hover {
+    transform: translateY(-10px);
+}
+
+.template-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.template-content {
+    padding: 20px;
+}
+
+.template-content h3 {
+    color: var(--light);
+    margin-bottom: 10px;
+}
+
+.template-content p {
+    color: var(--gray);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.template-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.demo-btn,
+.price-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-weight: 500;
+}
+
+.demo-btn {
+    background: var(--primary);
+    color: var(--light);
+}
+
+.price-btn {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+}
+
+.demo-btn:hover,
+.price-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: var(--dark);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    border: 1px solid var(--primary);
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: var(--gray);
+    cursor: pointer;
+}
+
+#qrcode {
+    margin: 20px 0;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.price-text {
+    color: var(--light);
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+@media (max-width: 1024px) {
+    .templates-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .templates-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<script src="https://res.cloudinary.com/dvknx0hpm/image/upload/v1746939895/qrcode_noerqk.jpg"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const templateCards = document.querySelectorAll('.template-card');
+    const modal = document.getElementById('qrModal');
+    const closeModal = document.querySelector('.close-modal');
+    const qrPrice = document.getElementById('qrPrice');
+
+    // Filter functionality
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            const filter = btn.dataset.filter;
+            templateCards.forEach(card => {
+                if (filter === 'all' || card.dataset.category === filter) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // QR Code Modal
+    document.querySelectorAll('.price-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const price = btn.dataset.price;
+            qrPrice.textContent = price;
+            
+            // Generate QR Code
+            const qr = qrcode(0, 'M');
+            qr.addData(`Amount: $${price}`);
+            qr.make();
+            
+            document.getElementById('qrcode').innerHTML = qr.createImgTag(6);
+            modal.style.display = 'flex';
+        });
+    });
+
+    closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
+</script>
+<!--Contact-Section-->
+
+<section id="contact" class="contact-section">
+    <div class="contact-container">
+        <h1 class="contact-title">Have Questions? Let's Connect!</h1>
+        
+        <p class="contact-description">
+            If you have any doubts, questions, or want to discuss your portfolio needs — feel free to reach out! We're here to help you at every step, whether you're a student, job seeker, or professional.
+        </p>
+
+        <div class="contact-grid">
+            <div class="contact-form">
+                <input type="text" placeholder="Your Name" class="form-input">
+                <input type="email" placeholder="Your Email" class="form-input">
+                <textarea placeholder="Your Message" class="form-input message-input"></textarea>
+                <button class="send-btn">
+                    Send Message <i class="fas fa-paper-plane"></i>
+                </button>
+                <p class="reply-time"><i class="far fa-clock"></i> We usually reply within 24 hours</p>
+            </div>
+
+            <div class="connect-section">
+                <h2 class="connect-title">Connect Directly</h2>
+                
+                <a href="https://wa.me/9959732476" class="connect-btn whatsapp">
+                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+                
+                <a href="https://www.instagram.com/vertex_solutions_1922?utm_source=qr&igsh=aDY2bjU2NWNrc2hk" class="connect-btn instagram">
+                    <i class="fab fa-instagram"></i> Message on Instagram
+                </a>
+                
+                <a href="https://www.linkedin.com/in/sasindra-madduri/" class="connect-btn linkedin">
+                    <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                </a>
+
+                <div class="visit-section">
+                    <h2 class="visit-title">Visit Us</h2>
+                    <p class="address">
+                        <i class="fas fa-map-marker-alt"></i>
+                        123 Creative Street, Design District<br>
+                        Digital City, DC 12345
+                    </p>
+                    
+                    <div class="map">
+                        <iframe 
+                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56363.54997293198!2d77.5785351686672!3d12.914473253487042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae14fc91a93031%3A0xf0afe62576cbdc3f!2zQlRNIOCwsuCxh-CwlOCwn-CxjSwg4LCs4LGG4LCC4LCX4LCz4LGC4LCw4LGBLCDgsJXgsLDgsY3gsKPgsL7gsJ_gsJU!5e1!3m2!1ste!2sin!4v1746726441741!5m2!1ste!2sin"></iframe>
+                           
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.contact-section {
+    padding: 80px 5%;
+    background: black;
+    color: var(--dark);
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-title {
+    font-size: 2.5rem;
+    color: #ff6b00;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    color: white;
+    line-height: 1.6;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-input {
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.message-input {
+    height: 150px;
+    resize: none;
+}
+
+.send-btn {
+    background: #ff6b00;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: 0.3s ease;
+}
+
+.send-btn:hover {
+    background: #ff8533;
+}
+
+.reply-time {
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+}
+
+.reply-time i {
+    color: #ff6b00;
+    margin-right: 5px;
+}
+
+.connect-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: #ffffff;
+}
+
+.connect-title, .visit-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.connect-btn {
+    padding: 15px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s ease;
+}
+
+.whatsapp {
+    background: #25D366;
+}
+
+.instagram {
+    background: #E4405F;
+}
+
+.linkedin {
+    background: #0077B5;
+}
+
+.connect-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.visit-section {
+    margin-top: 30px;
+}
+
+.address {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.address i {
+    color: #ff6b00;
+    margin-right: 10px;
+}
+
+.map {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-title {
+        font-size: 2rem;
+    }
+}
+</style>
+
+<!--footer section-->
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <h3 class="footer-logo">Vertex-Solutions</h3>
+                <p>Creating stunning digital experiences and professional portfolios that help you stand out in the digital world.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-services">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">UI/UX Design</a></li>
+                    <li><a href="#">E-Commerce</a></li>
+                    <li><a href="#">Portfolio Sites</a></li>
+                    <li><a href="#">Digital Marketing</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Puttangi Layout
+                1st Stage, BTM Layout
+                Banglore, Karnataka 560081</p>
+                <p><i class="fas fa-phone"></i> +91 9959732476</p>
+                <p><i class="fas fa-envelope"></i> sasindragandla.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="copyright">
+                <p>&copy; 2025 Vertex-Solutions. All rights reserved.</p>
+            </div>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+.footer {
+    background: #111;
+    color: var(--light);
+    padding: 80px 5% 30px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.footer-about {
+    max-width: 300px;
+}
+
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.footer-about p {
+    color: var(--gray);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    width: 35px;
+    height: 35px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light);
+    transition: 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--primary);
+    transform: translateY(-3px);
+}
+
+.footer h3 {
+    color: var(--light);
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.footer-links ul,
+.footer-services ul {
+    list-style: none;
+}
+
+.footer-links li,
+.footer-services li {
+    margin-bottom: 12px;
+}
+
+.footer-links a,
+.footer-services a {
+    color: var(--gray);
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-services a:hover {
+    color: var(--primary);
+    padding-left: 5px;
+}
+
+.footer-contact p {
+    color: var(--gray);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-contact i {
+    color: var(--primary);
+}
+
+.footer-bottom {
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.copyright {
+    color: var(--gray);
+}
+
+.footer-bottom-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-bottom-links a {
+    color: var(--gray);
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+    color: var(--primary);
+}
+
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-bottom-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+</style>
+</body>
+</html>
